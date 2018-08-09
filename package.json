@@ -5,13 +5,14 @@
   "dependencies": {
     "eslint-plugin-react": "^7.10.0",
     "eslint-watch": "^4.0.2",
-    "jest-cli": "^23.4.2",
+    "jest": "20.0.4",
+    "jest-cli": "20.0.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "npm-run-all --parallel lint:watch test:watch",
+    "start": "npm-run-all --parallel lint:watch test:watch react-start",
     "react-start": "react-scripts start",
     "build": "react-scripts build",
     "prebuild": "npm-run-all test lint",
