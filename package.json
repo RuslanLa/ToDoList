@@ -1,0 +1,28 @@
+{
+  "name": "todolist",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-watch": "^4.0.2",
+    "jest-cli": "^23.4.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel lint:watch test:watch",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "prebuild": "npm-run-all test lint",
+    "test": "react-scripts test --env=jsdom",
+    "test:watch": "npm run test",
+    "eject": "react-scripts eject",
+    "lint": " ./node_modules/.bin/esw src --color",
+    "lint:watch": "npm run lint -- --watch"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-google": "^0.9.1"
+  }
+}
