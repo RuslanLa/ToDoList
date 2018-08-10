@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 function foo(x: ?number): string {
   if (x) {
-    return x.toString();
+    return x;
   }
   return "default string";
 }

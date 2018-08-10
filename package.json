@@ -20,18 +20,20 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "prestart": "npm run flow-status",
-    "start": "npm-run-all --parallel lint:watch test:watch react-start",
+    "prerestart":"npm run prestart",
+    "prestart": "npm run flow-status && npm run lint",
+    "start": "npm-run-all --parallel test:watch react-start",
     "react-start": "react-scripts start",
     "build": "react-scripts build",
     "prebuild": "npm-run-all test:coverage lint flow-status",
-    "test:coverage":"npm run test -- --coverage",
+    "test:coverage": "npm run test -- --coverage",
     "test": "react-scripts test --env=jsdom",
     "test:watch": "npm run test",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src/**/*.js --color",
-    "flow-status": "flow status --color always",
-    "lint:watch": "./node_modules/.bin/esw src/**/*.js --color -- --watch"
+    "flow-status": "flow check --color always",
+    "lint:watch": "./node_modules/.bin/esw 'src/**/*.js' --color -- --watch",
+    "postinstall": "./node_modules/.bin/flow-typed install"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -39,6 +41,7 @@
     "eslint": "^5.3.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-flowtype": "^2.50.0",
-    "flow-bin": "^0.78.0"
+    "flow-bin": "^0.78.0",
+    "flow-typed": "^2.5.1"
   }
 }
