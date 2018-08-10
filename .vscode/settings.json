@@ -1,0 +1,5 @@
+{
+  "javascript.validate.enable": false,
+  "flow.useNPMPackagedFlow": false,
+  "editor.formatOnSave": false
+}

@@ -1,9 +1,16 @@
+// @flow
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
-class App extends Component {
-  render() {
+function foo(x: ?number): string {
+  if (x) {
+    return x.toString();
+  }
+  return "default string";
+}
+foo(1);
+class App extends Component<{}> {
+  render(): React$Element<any> {
     return (
       <div className="App">
         <header className="App-header">
